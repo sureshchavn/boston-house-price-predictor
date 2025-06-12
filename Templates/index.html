@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston House Price Predictor</title>
+    <style>
+        body {
+            background-color: #d8f3f9;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            padding: 10px 30px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boston House Price Predictor</h1>
+    
+    <form method="POST" action="/predict">
+        <input type="number" name="crim" step="any" placeholder="CRIM" required>
+        <input type="number" name="zn" step="any" placeholder="ZN" required>
+        <input type="number" name="indus" step="any" placeholder="INDUS" required>
+        <input type="number" name="chas" step="any" placeholder="CHAS (0 or 1)" required>
+        <input type="number" name="nox" step="any" placeholder="NOX" required>
+        <input type="number" name="rm" step="any" placeholder="RM" required>
+        <input type="number" name="age" step="any" placeholder="AGE" required>
+        <input type="number" name="dis" step="any" placeholder="DIS" required>
+        <input type="number" name="rad" step="any" placeholder="RAD" required>
+        <input type="number" name="tax" step="any" placeholder="TAX" required>
+        <input type="number" name="ptratio" step="any" placeholder="PTRATIO" required>
+        <input type="number" name="b" step="any" placeholder="B" required>
+        <input type="number" name="lstat" step="any" placeholder="LSTAT" required>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        Predicted House Price: <strong>${{ prediction }}</strong>
+    </div>
+    {% endif %}
+</body>
+</html>
