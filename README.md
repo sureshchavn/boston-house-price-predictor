@@ -20,4 +20,4 @@ This project predicts the price of houses based on 13 features from the Boston H
 
 ## ✅ Result:
 Working Flask app running on localhost:
-![Boston House Price Predictor Screenshot](screenshot.png)
+![Boston House Price Predictor]([screenshot.png](http://127.0.0.1:5000/predict))
